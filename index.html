@@ -1,0 +1,285 @@
+Index file
+
+<!-- Mentor Academy ওয়েবসাইট: মোবাইল-ফ্রেন্ডলি ডিজাইন, নতুন ফন্ট এবং হ্যামবার্গার মেনু -->
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentor Academy - স্মার্ট ভবিষ্যতের প্রস্তুতি</title>
+    <!-- Tailwind CSS লোড করা হচ্ছে -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font: Hind Siliguri (বাংলা ও প্রফেশনাল ব্যবহারের জন্য) -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* সমস্ত লেখায় Hind Siliguri ফন্ট ব্যবহার */
+        body { font-family: 'Hind Siliguri', sans-serif; }
+        
+        /* মোবাইল মেনু ট্রানজিশন */
+        #mobile-menu {
+            transition: max-height 0.3s ease-out;
+            max-height: 0;
+            overflow: hidden;
+        }
+        #mobile-menu.open {
+            max-height: 300px; /* মেনুর উচ্চতা বাড়ানো হলো */
+        }
+
+        /* Hero সেকশনের হেডিং স্পেস ঠিক করা */
+        .spaced-heading span {
+            margin-right: 0.25rem; /* শব্দের মাঝে স্পেস বাড়ানো */
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <!-- Header / Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-10">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+            <!-- লোগো/নাম (Mentor: Red, Academy: Green) -->
+            <h1 class="text-3xl font-bold">
+                <span class="text-red-600">Mentor</span><span class="text-green-600">Academy</span>
+            </h1>
+            
+            <!-- ডেস্কটপ মেনু -->
+            <nav class="hidden md:flex space-x-6 text-lg font-medium">
+                <a href="#home" class="text-red-600 hover:text-red-800 transition duration-150">হোম</a>
+                <a href="#updates" class="hover:text-red-600 transition duration-150">নোটিশ</a>
+                <a href="#results" class="hover:text-red-600 transition duration-150">ফলাফল</a>
+                <a href="#about" class="hover:text-red-600 transition duration-150">আমাদের কথা</a>
+                <a href="#contact" class="hover:text-red-600 transition duration-150">যোগাযোগ</a>
+            </nav>
+
+            <!-- মোবাইল মেনু বাটন (Hamburger Icon) -->
+            <button id="menu-button" class="md:hidden text-gray-800 hover:text-red-600 p-2 focus:outline-none rounded-md transition duration-150" aria-label="Toggle menu">
+                <!-- Three Dots Icon (SVG) -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+        
+        <!-- মোবাইল মেনু ড্রপডাউন -->
+        <nav id="mobile-menu" class="md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-red-600 hover:bg-gray-100">হোম</a>
+                <a href="#updates" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100">নোটিশ</a>
+                <a href="#results" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100">ফলাফল</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100">আমাদের কথা</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100">যোগাযোগ</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="py-16 md:py-24 bg-red-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <!-- বাংলা স্পেস ঠিক করা হয়েছে -->
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-4 spaced-heading">
+                <span class="text-red-600">মেন্টর</span><span class="text-green-600">একাডেমি</span>
+            </h2>
+            
+            <p class="text-2xl md:text-3xl text-gray-800 mb-8 font-medium max-w-3xl mx-auto">
+                ভালোভাবে শিখি, স্মার্ট হয়ে উঠি,<br>সুপরিকল্পিত শিক্ষায় গড়ি স্মার্ট জীবনের ভিত্তি।
+            </p>
+            <p class="text-xl md:text-2xl text-red-600 font-semibold mb-10">
+                অভিজ্ঞ মেন্টরদের হাত ধরে শুরু হোক উজ্জ্বল পথযাত্রা।
+            </p>
+            <!-- CTA Button -->
+            <a href="#contact" class="inline-block px-10 py-4 bg-green-600 text-white text-xl font-bold rounded-full shadow-lg hover:bg-green-700 transition duration-300 transform hover:scale-105">
+                ভর্তি সংক্রান্ত তথ্য জানুন
+            </a>
+        </div>
+    </section>
+
+    <!-- Updates and Notice Section -->
+    <section id="updates" class="py-12 md:py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-3xl font-bold text-center mb-10 border-b-2 border-red-600 inline-block px-4 pb-2">গুরুত্বপূর্ণ নোটিশ ও আপডেট</h3>
+
+            <div class="max-w-3xl mx-auto space-y-6">
+                <!-- নোটিশ ১: ছুটির ঘোষণা (উদাহরণ) -->
+                <div class="bg-yellow-50 border-l-4 border-yellow-500 text-yellow-800 p-4 rounded-lg shadow-md" role="alert">
+                    <div class="font-bold text-lg mb-1 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.398 16c-.77 1.333.192 3 1.732 3z" />
+                        </svg>
+                        শারদীয় পূজার ছুটি
+                    </div>
+                    <p class="text-gray-700 mb-2">
+                        দুর্গাপূজা উপলক্ষে আগামী **৫ই নভেম্বর থেকে ১২ই নভেম্বর** পর্যন্ত অ্যাকাডেমির সমস্ত ক্লাস বন্ধ থাকবে। সকল শিক্ষার্থীকে এই সময়ে বাড়ির কাজ শেষ করার নির্দেশ দেওয়া হচ্ছে।
+                    </p>
+                    <!-- বিস্তারিত লিঙ্ক যোগ করার স্থান -->
+                    <a href="#" class="text-blue-600 hover:underline font-medium mt-2 block">
+                        ছুটির বিস্তারিত রুটিন ডাউনলোড করুন
+                    </a>
+                </div>
+
+                <!-- নোটিশ ২: নতুন ভর্তির বিজ্ঞপ্তি (উদাহরণ) -->
+                <div class="bg-green-50 border-l-4 border-green-500 text-green-800 p-4 rounded-lg shadow-md" role="alert">
+                    <div class="font-bold text-lg mb-1 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8m0 0l-8 8m0 0l8-8m0 0l8 8" />
+                        </svg>
+                        নতুন ব্যাচে ভর্তি শুরু!
+                    </div>
+                    <p class="text-gray-700 mb-2">
+                        ২০২৬ সালের মাধ্যমিক পরীক্ষার জন্য নতুন ব্যাচের ভর্তি প্রক্রিয়া শুরু হয়েছে। আসন সংখ্যা সীমিত, দ্রুত যোগাযোগ করুন।
+                    </p>
+                    <!-- বিস্তারিত লিঙ্ক যোগ করার স্থান -->
+                    <a href="#contact" class="text-blue-600 hover:underline font-medium mt-2 block">
+                        ভর্তি প্রক্রিয়া ও ফিস সম্পর্কে জানুন
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Results and Toppers Section -->
+    <section id="results" class="py-12 md:py-16 bg-gray-100">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-3xl font-bold text-center mb-10 border-b-2 border-green-600 inline-block px-4 pb-2">পরীক্ষার ফলাফল ও টপার</h3>
+
+            <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
+                <!-- পরীক্ষার ফলাফল লিংক -->
+                <div class="bg-white p-6 rounded-xl shadow-lg flex flex-col justify-center items-center text-center transition duration-300 hover:shadow-xl border-t-4 border-red-600">
+                    <h4 class="text-2xl font-semibold mb-4 text-red-600">সর্বশেষ পরীক্ষার ফলাফল</h4>
+                    <p class="text-gray-600 mb-6">অক্টোবর মাসের মাসিক পরীক্ষার ফলাফল জানতে নিচে ক্লিক করুন।</p>
+                    <a href="#" class="inline-block px-8 py-3 bg-red-600 text-white text-lg font-bold rounded-lg shadow-md hover:bg-red-700 transition duration-300">
+                        রেজাল্ট দেখতে ক্লিক করুন
+                    </a>
+                </div>
+
+                <!-- টপারদের নামের তালিকা -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-green-600">
+                    <h4 class="text-2xl font-semibold mb-4 text-green-600 text-center">টপারদের তালিকা (অক্টোবর মাস)</h4>
+                    <ol class="space-y-3 text-lg list-decimal list-inside">
+                        <li class="p-2 bg-yellow-100 rounded-md shadow-sm font-bold text-yellow-800">১ম স্থান: রিয়া দাস (৯৮%)</li>
+                        <li class="p-2 bg-gray-100 rounded-md shadow-sm font-semibold">২য় স্থান: সুজয় মন্ডল (৯৫%)</li>
+                        <li class="p-2 bg-gray-100 rounded-md shadow-sm font-semibold">৩য় স্থান: পিয়ালী রায় (৯৩%)</li>
+                    </ol>
+                    <p class="text-sm text-gray-500 mt-4 text-center">পরের পরীক্ষায় টপার হতে তুমিও প্রস্তুত হও!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us and Founder's Message Section -->
+    <section id="about" class="py-12 md:py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-3xl font-bold text-center mb-10 border-b-2 border-red-600 inline-block px-4 pb-2">আমাদের সম্পর্কে ও মেন্টরের কথা</h3>
+
+            <div class="max-w-4xl mx-auto space-y-8">
+                <!-- প্রতিষ্ঠাতা ও পরিচালকের বার্তা -->
+                <div class="bg-red-50 p-6 rounded-xl shadow-lg border-l-4 border-red-600">
+                    <h4 class="text-2xl font-semibold mb-3 text-red-600">প্রতিষ্ঠাতা ও পরিচালকের বার্তা</h4>
+                    <p class="text-gray-700 leading-relaxed italic mb-4">
+                        "Mentor Academy শুধু একটি কোচিং সেন্টার নয়, এটি স্বপ্ন দেখার এবং সেই স্বপ্ন পূরণের একটি পথ। দীর্ঘ অভিজ্ঞতায় আমরা দেখেছি, সঠিক দিকনির্দেশনা এবং ব্যক্তিগত মনোযোগ একটি শিক্ষার্থীর জীবন পরিবর্তন করে দিতে পারে। অভিজ্ঞ মেন্টরদের হাত ধরে, আমরা প্রতিটি ছাত্রছাত্রীকে শুধু পরীক্ষামুখী নয়, ভবিষ্যতের একজন স্মার্ট ও আত্মবিশ্বাসী মানুষ হিসেবে গড়ে তুলতে প্রতিশ্রুতিবদ্ধ।"
+                    </p>
+                    <p class="text-right font-bold text-red-700">- [তোমার নাম], প্রতিষ্ঠাতা ও পরিচালক</p>
+                </div>
+
+                <!-- আমাদের লক্ষ্য -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-green-600">
+                    <h4 class="text-2xl font-semibold mb-3 text-green-600">Mentor Academy-এর লক্ষ্য</h4>
+                    <p class="text-gray-700 leading-relaxed">
+                        মানসম্মত দিকনির্দেশনা এবং সুপরিকল্পিত শিক্ষাদানের মাধ্যমে প্রতি শিক্ষার্থীকে আমরা দিই সাফল্যের স্মার্ট সমাধান। আমরা বিশ্বাস করি, প্রতিভার সঠিক পরিচর্যাই উজ্জ্বল ভবিষ্যতের চাবিকাঠি। আমাদের কোর্সগুলি শুধু সিলেবাস কভার করে না, বরং শিক্ষার্থীদের সমালোচনামূলক চিন্তা (Critical Thinking) এবং সমস্যা সমাধানের দক্ষতা বৃদ্ধিতে সাহায্য করে।
+                    </p>
+                    <ul class="mt-4 space-y-2 text-gray-700 list-disc list-inside">
+                        <li>ব্যক্তিগত যত্ন এবং ছোট ব্যাচ সাইজ।</li>
+                        <li>নিয়মিত মক টেস্ট এবং দুর্বলতা বিশ্লেষণ।</li>
+                        <li>অভিভাবকদের সাথে নিয়মিত যোগাযোগ ও ফিডব্যাক।</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-12 md:py-16 bg-gray-100">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-3xl font-bold text-center mb-10 border-b-2 border-green-600 inline-block px-4 pb-2">আমাদের সাথে যোগাযোগ</h3>
+
+            <div class="max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-2xl grid md:grid-cols-2 gap-8">
+                <!-- যোগাযোগের তথ্য -->
+                <div class="space-y-6">
+                    <p class="text-lg font-semibold text-green-600 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        ঠিকানা:
+                    </p>
+                    <p class="pl-9 text-gray-700">
+                        [তোমার অ্যাকাডেমির সম্পূর্ণ ঠিকানা এখানে বসাও]<br>
+                        [শহর], [জেলা], [পিন কোড]
+                    </p>
+
+                    <p class="text-lg font-semibold text-green-600 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                        </svg>
+                        ফোন নম্বর:
+                    </p>
+                    <p class="pl-9 text-gray-700">[তোমার ফোন নম্বর এখানে বসাও]</p>
+
+                    <p class="text-lg font-semibold text-green-600 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-2 4v7a2 2 0 01-2 2H5a2 2 0 01-2-2v-7" />
+                        </svg>
+                        ইমেইল:
+                    </p>
+                    <p class="pl-9 text-gray-700">[তোমার ইমেইল এখানে বসাও]</p>
+                </div>
+
+                <!-- ভর্তির সময়সূচী -->
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <h4 class="text-xl font-bold mb-4 text-center text-red-600">ভর্তির জন্য কথা বলার সময়সূচী</h4>
+                    <p class="text-gray-700 mb-4 text-center">
+                        ভর্তি সংক্রান্ত অথবা অন্য কোনো আলোচনার জন্য আমাদের সাথে নিচের সময় যোগাযোগ করুন।
+                    </p>
+                    <ul class="space-y-2 text-center text-gray-800 font-semibold">
+                        <li class="p-1 bg-green-100 rounded-md">সোম থেকে শুক্র: বিকাল ৫টা - রাত ৮টা</li>
+                        <li class="p-1 bg-green-100 rounded-md">শনিবার: সকাল ১১টা - দুপুর ১টা</li>
+                        <li class="p-1 text-red-600 font-bold">রবিবার: বন্ধ</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-6">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
+            <p>&copy; 2025 Mentor Academy. সমস্ত অধিকার সংরক্ষিত।</p>
+            <p class="mt-2 text-gray-400">স্মার্ট শিক্ষায় গড়ি স্মার্ট জীবনের ভিত্তি।</p>
+        </div>
+    </footer>
+    
+    <!-- JavaScript for Mobile Menu Toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuButton = document.getElementById('menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+
+            // মেনু টগল ফাংশন
+            menuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('open');
+            });
+
+            // মেনুর যেকোনো লিঙ্কে ক্লিক করলে মেনুটি বন্ধ হবে
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (mobileMenu.classList.contains('open')) {
+                        mobileMenu.classList.remove('open');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+
